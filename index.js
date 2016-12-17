@@ -20,7 +20,7 @@ app.get('/', function(req, res, next) {
 
 Contact.sync()
     .then(function() {
-        app.listen(1337, function() {
+        app.listen(process.env.PORT || 1337, function() {
       console.log(chalk.blue('Server') + chalk.red( ' listening') + chalk.blue(' on') + chalk.red(' 1337.'))
     })
 })
