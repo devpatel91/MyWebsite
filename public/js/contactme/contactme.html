@@ -1,0 +1,43 @@
+<section id="contact-us">
+    <div class="wrap">
+        <!--left pannel start-->
+        <div class="pannel-left col-md-12">
+            <div ng-controller="contactCtrl">
+                <div ng-show="!showForm">
+                    <!-- <h3>Get in Touch</h3> -->
+                    <div class="contact-form">
+                        <form accept-charset="UTF-8">
+                            <input type="text" required="" placeholder="Name" class="contact-form-field" ng-model="name">
+                            <input type="email" required="" placeholder="Your email address" class="contact-form-field" ng-model="email">
+                            <textarea required="" placeholder="Message" id="comments" class="contact-form-field" ng-model="message"></textarea>
+                            <button type="button" class="btn btn-primary" style="width:80%;padding: 15px 20px; margin-bottom: 20px;" ng-click=submit()>Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="container4" ng-show="showForm">
+                    <h1 style="color: black;"> Successfully Submitted</h1>
+                </div>
+            </div>
+        </div>
+        <!--left pannel end-->
+        <!--left pannel start-->
+        <div class=" col-md-12">
+            <!--         <br>Connect me at: -->
+            <!-- <a href="mailto:devnpatel91@gmail.com" target="_top">devnpatel91@gmail.com</a> -->
+            <!--left pannel end-->
+            <div class="footer_line">
+                <button type="button" class="btn btn-email"><i class="fa fa-envelope"></i></button>
+                <button type="button" class="btn btn-vk"><i class="fa fa-vk"></i></button>
+                <a href="https://github.com/devpatel91" class="btn btn-social-icon btn-github" target="_blank">
+                    <span class="fa fa-github"></span>
+                </a>
+                <a href="https://www.linkedin.com/in/devpatel21" class="btn btn-social-icon btn-linkedin" target="_blank">
+                    <span class="fa fa-linkedin"></span>
+                </a>
+                <a href="mailto:devnpatel91@gmail.com" target="_top" class="btn btn-social-icon btn-linkedin">
+                    <span class="fa fa-email"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
