@@ -14,9 +14,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(__dirname + '/node_modules'))
 app.use(express.static(__dirname + '/public'))
 
-app.get('/', function(req, res, next) {
-    res.sendFile(__dirname + '/index.html')
-})
 
 Contact.sync()
     .then(function() {
@@ -24,6 +21,10 @@ Contact.sync()
       console.log(chalk.blue('Server') + chalk.red( ' listening') + chalk.blue(' on') + chalk.red(' 1337.'))
     })
 })
+app.get('/', function(req, res, next) {
+    res.sendFile(__dirname + '/index.html')
+})
+
 
 app.post('/',(req,res,next)=>{
 
