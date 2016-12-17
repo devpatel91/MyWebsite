@@ -1,10 +1,11 @@
-var http = require('http')
-var server = http.createServer()
-var bodyParser = require('body-parser')
-var express = require('express')
-var app = express()
-// var models = require('./models');
-// var Contact = models.Contact;
+var http = require('http');
+var server = http.createServer();
+var bodyParser = require('body-parser');
+var express = require('express');
+var app = express();
+
+var models = require('./models');
+var Contact = models.Contact;
 var chalk = require('chalk');
 
 app.use(bodyParser.json())
@@ -17,15 +18,13 @@ app.get('/', function(req, res, next) {
     res.sendFile(__dirname + '/index.html')
 })
 
-// Contact.sync()
-    //     .then(function() {
-
-// })
-
-
-  app.listen(1337, function() {
+Contact.sync()
+    .then(function() {
+        app.listen(1337, function() {
       console.log(chalk.blue('Server') + chalk.red( ' listening') + chalk.blue(' on') + chalk.red(' 1337.'))
     })
+})
+
 app.post('/',(req,res,next)=>{
 
 	return Contact.create({

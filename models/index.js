@@ -1,18 +1,25 @@
-// var Sequelize = require('sequelize');
-// var db = new Sequelize('postgres://localhost:5432/mywebsite',{ logging: false});
+var path = require('path');
+var Sequelize = require('sequelize');
 
-// var Contact = db.define('contact', {
-//     name: {
-//         type: Sequelize.STRING,
-//     },
-//     message: {
-//         type: Sequelize.STRING,
-//     },
-//     email: {
-//         type: Sequelize.TEXT,
-//     }
-// })
+var env = require(path.join(__dirname, '../env'));
 
-// module.exports = {
-//    Contact: Contact
-// };
+var db = new Sequelize(env.DATABASE_URI, {
+    logging: env.LOGGING
+});
+
+
+var Contact = db.define('contact', {
+    name: {
+        type: Sequelize.STRING,
+    },
+    message: {
+        type: Sequelize.STRING,
+    },
+    email: {
+        type: Sequelize.TEXT,
+    }
+})
+
+module.exports = {
+   Contact: Contact
+};
