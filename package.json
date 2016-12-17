@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "engines": {
-        "node": "6.5.0"
+        "node": "6.5.0",
+        "npm":"3.10.8"
     },
     "dependencies": {
         "angular": "^1.5.8",
